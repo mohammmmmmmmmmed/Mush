@@ -82,6 +82,12 @@ This will generate a `networks.json` file containing information about your netw
    - Click "Start Download" to begin
    - Monitor progress in the terminal output section
 
+## Demo
+
+Here's a quick demo of the Multi-Interface Download Manager in action:
+
+https://github.com/mohammmmmmmmmmed/Mush/raw/main/Sample.mp4
+
 ## How It Works
 
 1. **Network Analysis**:
