@@ -65,7 +65,18 @@ This will generate a `networks.json` file containing information about your netw
 ./downloadMonitor
 ```
 
-3. In the GUI:
+3. Run the network monitor to analyze your interfaces:
+   ```bash
+   ./network
+   ```
+   This will generate a `networks.json` file with your network interface metrics.
+
+4. Run the download manager (requires root for network configuration):
+   ```bash
+   sudo ./downloadMonitor
+   ```
+
+5. In the GUI:
    - Enter the download URL
    - Specify the output filename
    - Click "Start Download" to begin
@@ -106,11 +117,56 @@ The application uses a `networks.json` file with the following structure:
 }
 ```
 
+## Monitoring Interface Traffic
+
+To monitor traffic on individual interfaces, you can use the `iftop` tool. This is particularly useful for verifying that the download is being distributed across multiple interfaces.
+
+### Installing iftop:
+
+```bash
+# On Debian/Ubuntu
+sudo apt-get install iftop
+
+# On Fedora
+sudo dnf install iftop
+
+# On Arch Linux
+sudo pacman -S iftop
+```
+
+### Example Usage:
+
+Monitor traffic on a specific interface (e.g., eth0):
+```bash
+sudo iftop -i eth0
+```
+
+Monitor traffic on all interfaces:
+```bash
+sudo iftop -nNb
+```
+
+Key bindings in iftop:
+- `n` - Toggle DNS hostname resolution
+- `s` - Show source port
+- `d` - Show destination port
+- `t` - Toggle port display
+- `q` - Quit
+
+## Platform Compatibility
+
+This project is primarily developed and tested on **Arch Linux**. While it should work on other Linux distributions, you may encounter some differences. We welcome:
+
+- Testing on other Linux distributions
+- Bug reports for compatibility issues
+- Pull requests with fixes and improvements for other platforms
+
 ## Troubleshooting
 
 - **Permission Issues**: Run with `sudo` if you encounter permission errors
 - **Missing Dependencies**: Ensure all required packages are installed
 - **Network Issues**: Check that all interfaces are properly configured and have internet access
+- **Distribution-Specific Issues**: If you encounter issues on non-Arch distributions, please report them with details about your distribution and version
 
 ## License
 
