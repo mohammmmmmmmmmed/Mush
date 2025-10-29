@@ -86,8 +86,7 @@ This will generate a `networks.json` file containing information about your netw
 
 Here's a quick demo of the Multi-Interface Download Manager in action:
 
-https://github.com/mohammmmmmmmmmed/Mush/Sample.mp4
-
+[![Watch the demo](demo/image.png)](https://github.com/mohammmmmmmmmmed/Mush/raw/main/demo/Sample.mp4)
 ## How It Works
 
 1. **Network Analysis**:
